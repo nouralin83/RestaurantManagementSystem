@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.oop.EmployeeController" spacing="20" alignment="CENTER">
+    <Text text="Employee Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <Text text="Items for Your Section"/>
+    <ListView fx:id="itemListView"/>
+</VBox>

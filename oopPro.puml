@@ -1,0 +1,207 @@
+@startuml
+class com.example.oop.OrderController {
+- ComboBox<String> orderStatusCombo
++ void initialize()
++ void updateOrderStatus()
+}
+
+
+class com.example.oop.Main {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+class com.example.oop.SweetsController {
+- TableView<Item> itemsTable
+- TableColumn<Item,String> nameColumn
+- TableColumn<Item,Double> priceColumn
+- Button orderButton
+- CheckBox deliveryCheckBox
+- ListView<String> orderSummaryList
+- Label totalPriceLabel
+- ObservableList<Item> itemsList
+- double totalAccumulatedPrice
++ void initialize()
+- void loadItems()
+- void placeOrder()
+- void loadAllOrders()
+- void showError(String)
++ void logout()
+}
+
+
+class com.example.oop.SavoryController {
+- TableView<Table> tablesTable
+- TableColumn<Table,Integer> tableNumberColumn
+- TableColumn<Table,String> statusColumn
+- Button reserveButton
+- Button cancelButton
+- Button logoutButton
+- TableView<Item> itemsTable
+- TableColumn<Item,String> itemNameColumn
+- TableColumn<Item,Double> itemPriceColumn
+- Button orderButton
+- CheckBox deliveryCheckBox
+- TextArea orderSummaryArea
+- Label totalPriceLabel
+- ListView<String> orderSummaryList
+- ObservableList<Table> tablesList
+- ObservableList<Item> itemsList
+- double totalAccumulatedPrice
++ void initialize()
+- void loadTables()
+- void loadItems()
+- void reserveTable()
+- void cancelReservation()
+- void placeOrder()
+- void updateOrderSummary(Item,Table,boolean)
+- void loadAllOrders()
+- void showError(String)
++ void logout()
+}
+
+
+class com.example.oop.Table {
+- IntegerProperty tableNumber
+- StringProperty status
+- int id
++ int getId()
++ IntegerProperty tableNumberProperty()
++ StringProperty statusProperty()
++ int getTableNumber()
++ void setStatus(String)
++ String getStatus()
+}
+
+
+class com.example.oop.Order {
+- int id
+- int employeeId
+- int itemId
+- String status
+- Date orderTime
+- Date deliveryTime
++ int getId()
++ int getEmployeeId()
++ int getItemId()
++ String getStatus()
++ Date getOrderTime()
++ Date getDeliveryTime()
++ void setId(int)
++ void setEmployeeId(int)
++ void setItemId(int)
++ void setStatus(String)
++ void setOrderTime(Date)
++ void setDeliveryTime(Date)
+}
+
+
+class com.example.oop.DBConnection {
++ {static} Connection getConnection()
+}
+
+class com.example.oop.AddItemController {
+- TextField itemNameField
+- TextField itemPriceField
+- ComboBox<String> itemCategoryCombo
++ void initialize()
++ void addItem()
++ void goBack()
+}
+
+
+class com.example.oop.EmployeeController {
+- ListView<String> itemListView
++ void initialize()
+}
+
+
+class com.example.oop.ManagerSignUpController {
+- TextField usernameField
+- PasswordField passwordField
+- PasswordField confirmPasswordField
++ void handleSignUp()
++ void goBack()
+- void showAlert(Alert.AlertType,String)
+}
+
+
+class com.example.oop.Employee {
+- int id
+- String name
+- String address
+- String phone
+- String password
+- String section
+- String role
++ int getId()
++ String getName()
++ String getAddress()
++ String getPhone()
++ String getPassword()
++ String getSection()
++ String getRole()
++ void setId(int)
++ void setName(String)
++ void setAddress(String)
++ void setPhone(String)
++ void setPassword(String)
++ void setSection(String)
++ void setRole(String)
+}
+
+
+class com.example.oop.AddEmployeeController {
+- TextField employeeNameField
+- TextField employeeAddressField
+- TextField employeePhoneField
+- TextField employeePasswordField
+- ComboBox<String> employeeSectionCombo
++ void initialize()
++ void addEmployee()
++ void goBack()
+}
+
+
+class com.example.oop.Item {
+- Integer id
+- StringProperty name
+- DoubleProperty price
++ int getId()
++ StringProperty nameProperty()
++ DoubleProperty priceProperty()
++ String getName()
++ double getPrice()
+}
+
+
+class com.example.oop.LoginController {
+- TextField usernameField
+- PasswordField passwordField
++ void handleLogin()
++ void showSignUpPrompt()
+- void openManagerSignUp()
+- void openManagerDashboard()
+- void openEmployeeDashboard(String)
+- void showError(String)
+}
+
+
+class com.example.oop.ManagerController {
+- ListView<String> employeeListView
+- ListView<String> itemListView
+- ListView<String> topSellingListView
++ void initialize()
+- void populateEmployeeList()
+- void populateItemList()
+- void populateTopSellingList()
++ void addEmployee()
++ void addItem()
++ void goToLogin()
+}
+
+
+
+
+javafx.application.Application <|-- com.example.oop.Main
+@enduml

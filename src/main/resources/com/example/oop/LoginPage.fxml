@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.oop.LoginController"
+      spacing="20" style="-fx-background-color: #f2f2f2;" alignment="CENTER">
+
+    <!-- الجزء الأيسر: اللوجو -->
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #2c3e50;" prefWidth="250">
+        <ImageView fitHeight="120" fitWidth="120">
+            <image>
+                <!--<Image url="@asmo_logo.png"/>- تأكد أن الصورة محفوظة بهذا الاسم في نفس مجلد resources -->
+            </image>
+        </ImageView>
+        <Label text="Esmoh A !" textFill="white">
+            <font>
+                <Font size="22"/>
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- الجزء الأيمن: نموذج الدخول -->
+    <VBox spacing="15" alignment="CENTER" prefWidth="300">
+        <Label text="Welcome Back!" style="-fx-font-size: 24px; -fx-text-fill: #333;" />
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="250" />
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="250" />
+
+        <Button text="Login" onAction="#handleLogin" maxWidth="150" style="-fx-background-color: #007bff; -fx-text-fill: white;" />
+        <Hyperlink text="Sign Up as Manager" onAction="#showSignUpPrompt" />
+    </VBox>
+</HBox>

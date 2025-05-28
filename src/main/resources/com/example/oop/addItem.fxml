@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.oop.AddItemController">
+
+    <!-- الشعار الجانبي -->
+    <left>
+        <VBox spacing="15" alignment="CENTER" style="-fx-background-color: #2c3e50;" prefWidth="200">
+            <ImageView fitWidth="100" fitHeight="100">
+                <image>
+                    <Image url="@asmo_logo.png"/>
+                </image>
+            </ImageView>
+            <Label text="Asmo Ah" textFill="white">
+                <font>
+                    <Font size="22"/>
+                </font>
+            </Label>
+            <Button text="Back" onAction="#goBack" style="-fx-background-color: #34495e; -fx-text-fill: white;"/>
+        </VBox>
+    </left>
+
+    <!-- المحتوى الرئيسي -->
+    <center>
+        <VBox spacing="15" alignment="CENTER" >
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+            <Label text="Add New Item">
+                <font><Font size="26"/></font>
+            </Label>
+
+            <TextField fx:id="itemNameField" promptText="Item Name" prefWidth="300"/>
+            <TextField fx:id="itemPriceField" promptText="Price" prefWidth="300"/>
+            <ComboBox fx:id="itemCategoryCombo" promptText="Select Category" prefWidth="300"/>
+
+            <Button text="Add Item" onAction="#addItem" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        </VBox>
+    </center>
+</BorderPane>
